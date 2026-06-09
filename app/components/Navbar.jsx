@@ -1,125 +1,69 @@
 "use client"
 import Link from 'next/link'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { Menu, X } from "lucide-react"
 
 const Navbar = () => {
-        const [isOpen, setIsOpen] = useState(false)
-    const MenuRef = useRef(null)
-    const tlRef = useRef(null)
+    const [isOpen, setIsOpen] = useState(false)
 
     const navItems = [
-        {
-            path: "/",
-            label: "Home"
-        },
-        {
-            path: "/about",
-            label: "About"
-        },
-        {
-            path: "/work",
-            label: "Work"
-        },
-        {
-            path: "/services",
-            label: "Services"
-        },
-        {
-            path: "/contact",
-            label: "Contact"
-        },
+        { id: 1, path: "/", label: "Home" },
+        { id: 2, path: "/about", label: "About" },
+        { id: 3, path: "/work", label: "Work" },
+        { id: 4, path: "/services", label: "Services" },
+        { id: 5, path: "/contact", label: "Contact" },
     ]
 
-    useGSAP(() => {
-        if (!MenuRef.current) return
-        tlRef.current = gsap.timeline({ paused: true })
-            .fromTo(
-                MenuRef.current,
-                { y: -20, autoAlpha: 0 },
-                { y: 0, autoAlpha: 1, duration: 0.4, ease: "power3.out" }
-            )
-            .from('.link', {
-                y: 20,
-                opacity: 0,
-                stagger: 0.08,
-                duration: 0.4,
-                ease: "power3.out"
-            }, "-=0.2")
-    })
-
-    const handleClick = () => {
-        setIsOpen((prev) => {
-            const next = !prev
-            if (next) tlRef.current?.play()
-            else tlRef.current?.reverse()
-            return next
-        })
-    }
-
-    const scrollToSection = (e, href) => {
-        e.preventDefault()
-        const sectionId = href.replace('/', '#').replace('#', '#')
-        const target = document.querySelector(
-            href.startsWith('#') ? href : `#${href.replace('/', '')}`
-        )
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' })
-        }
-    }
-  return (
-    <header className='fixed top-0 left-0 w-full backdrop-blur-sm z-50'>
-            <div className='container flex items-center justify-between py-4'>
-                <Link 
-                    href="#home" 
-                    className='hover:scale-105 transition-transform font-bebasNeue text-[32px]'
-                    onClick={(e) => scrollToSection(e, '#home')}
+    return (
+        <header className='fixed top-0 left-0 w-full z-50'>
+            <div className='flex items-center justify-between py-4 px-10'>
+                <Link
+                    href="/"
+                    className='hover:scale-105 transition-transform text-[32px]'
                 >
-                    BT
+                    Sahid Tyres
                 </Link>
 
                 <nav className='lg:hidden'>
-                    <button onClick={handleClick} className='bg-black size-10 text-white flex items-center justify-center rounded-xl hover:bg-black/80 transition'>
+                    <button
+                        onClick={() => setIsOpen(prev => !prev)} 
+                        className='bg-black size-10 text-white flex items-center justify-center rounded-xl hover:bg-black/80 transition cursor-pointer'
+                    >
                         {isOpen ? <X /> : <Menu />}
                     </button>
-                    <ul ref={MenuRef} className='fixed top-full w-full bg-stone-900 left-0 text-stone-50 h-62.5 flex items-center justify-center flex-col opacity-0 invisible'>
+
+                    <ul className={`fixed top-16 w-full bg-stone-900 left-0 text-stone-50 h-90 flex items-center justify-center flex-col gap-6 transition-all duration-300 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
                         {navItems.map((item) => (
                             <li key={item.id}>
-                                <a
-                                    href={item.href}
-                                    className='link block text-4xl font-bebasNeue'
-                                    onClick={(e) => { scrollToSection(e, item.href); handleClick() }}
+                                <Link
+                                    href={item.path}
+                                    className='block text-4xl hover:text-stone-300 transition'
                                 >
                                     {item.label}
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
                 </nav>
 
-                <nav className='hidden lg:flex items-center gap-5'>
-                    <ul className='flex items-center gap-11'>
+                <nav className='hidden lg:flex gap-5 items-center'>
+                    <ul className='flex gap-7 items-center'>
                         {navItems.map((item) => (
                             <li key={item.id}>
-                                <a
-                                    href={item.href}
-                                    onClick={(e) => scrollToSection(e, item.href)}
+                                <Link
+                                    href={item.path}
                                     className='uppercase relative group transition'
                                 >
                                     {item.label}
                                     <span className='absolute -bottom-1 left-0 w-0 h-[1.5px] bg-white group-hover:w-full transition-all duration-300 ease-out' />
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>
-                    <Button  onClick={(e) => {
-                        e.preventDefault()
-                        document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-                    }} label={'Contact'} />
                 </nav>
             </div>
         </header>
-  )
+    )
 }
 
 export default Navbar
