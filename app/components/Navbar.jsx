@@ -31,12 +31,12 @@ const Navbar = () => {
     ]
 
     return (
-        <header className='fixed top-0 left-0 w-full z-50'
+        <header className='fixed top-0 left-0 w-full z-50 backdrop-blur-[10px]'
             style={{backgroundColor : "rgba(10,10,10,0.95)",
                 borderBottom: "2px solid #c0001a"
             }}
         >
-            <div className='flex items-center justify-between py-4 px-10'>
+            <div className='flex items-center justify-between py-4 px-20'>
                 <Link
                     href="/"
                     className='hover:scale-105 transition-transform text-[32px]'
@@ -72,16 +72,30 @@ const Navbar = () => {
 
                 <nav className='hidden lg:flex gap-5 items-center'>
                     <ul className='flex gap-7 items-center'>
-                        {navItems.map((item) => (
-                            <li key={item.id}>
-                                <Link
-                                    href={item.path}
-                                    className='uppercase relative group transition'
-                                >
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
+                        {
+                            navItems.map((item) => (
+                                <li key={item.id}>
+                                    <Link
+                                        href={item.path}
+                                        className='uppercase relative group transition-colors duration-200 font-bold'
+                                        onMouseEnter={e => (e.currentTarget.style.color = "#c0001a")}
+                                        onMouseLeave={e => (e.currentTarget.style.color = "#ccc")}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                        <button className='uppercase relative group transition-colors font-bold cursor-pointer py-2 px-6 rounded-sm duration-200'
+                            style={{
+                                backgroundColor: "#c0001a",
+                                
+                            }}  
+                            onMouseEnter={e => (e.currentTarget.style.background = "#e8001f")}
+                            onMouseLeave={e => (e.currentTarget.style.background = "#c0001a")}
+                        >
+                            Book Now
+                        </button>
                     </ul>
                 </nav>
             </div>
