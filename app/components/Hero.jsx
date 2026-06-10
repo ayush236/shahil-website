@@ -7,20 +7,20 @@ const Hero = () => {
         style={{
             background: "linear-gradient(135deg, #0a0a0a 0%, #1a0005 50%, #0a0a0a 100%)",
         }}>
-        <div className='w-[600px] h-[600px] rounded-full absolute -right-100 top-[50%] transform -translate-y-1/2 pointer-events-none' style={{
+        <div className='w-150 h-150 rounded-full absolute -right-100 top-[50%] transform -translate-y-1/2 pointer-events-none' style={{
           border: "60px solid rgba(192,0,26,0.12)",
         }} />
-        <div className='w-[400px] h-[400px] rounded-full absolute right-0 top-[50%] transform -translate-y-1/2 pointer-events-none'style={{
+        <div className='w-100 h-100 rounded-full absolute right-0 top-[50%] transform -translate-y-1/2 pointer-events-none'style={{
           border: "40px solid rgba(192,0,26,0.08)",
         }} />
-        <div className='absolute top-0 right-[30%] w-2 h-[120%] transform rotate-[15deg] pointer-events-none'
+        <div className='absolute top-0 right-[30%] w-2 h-[120%] transform rotate-15 pointer-events-none'
           style={{
           background: "linear-gradient(180deg, transparent, rgba(192,0,26,0.3), transparent)",
         }} />
 
-        <div className="max-w-[1200px] mx-auto px-6 py-20 relative z-10">
-            <div className="max-w-[680px]">
-                <div className="inline-block bg-[#c0001a] text-white px-[14px] py-1 text-xs font-black tracking-[2px] uppercase mb-6">
+        <div className="max-w-300 mx-auto px-6 py-20 relative z-10"> 
+            <div className="max-w-170">
+                <div className="inline-block bg-[#c0001a] text-white px-3.5 py-1 text-xs font-black tracking-[2px] uppercase mb-6">
                 ⚙ Trusted Since 2008
                 </div>
                 <h1 className="text-[clamp(42px,8vw,90px)] font-black leading-[0.95] mb-6 tracking-[-2px]" style={{ fontFamily: "'Arial Black', sans-serif" }}>
@@ -36,7 +36,7 @@ const Hero = () => {
                     RIDE OUT.
                 </span>
                 </h1>
-                <p className="text-lg text-[#aaa] leading-relaxed mb-10 max-w-[500px] font-normal" style={{ fontFamily: "Arial, sans-serif" }}>
+                <p className="text-lg text-[#aaa] leading-relaxed mb-10 max-w-125 font-normal" style={{ fontFamily: "Arial, sans-serif" }}>
                 Expert tyre fitting, puncture repairs, and full bicycle servicing. Walk in, ride out — same day service guaranteed.
                 </p>
 
@@ -55,7 +55,7 @@ const Hero = () => {
                     </a>
                 </div>
 
-                <div className="flex gap-10 mt-[60px] flex-wrap">
+                <div className="flex gap-10 mt-15 flex-wrap">
                     {[["5000+", "Happy Customers"], ["15+", "Years Experience"], ["Same Day", "Turnaround"]].map(([num, label]) => (
                         <div key={label}>
                             <div className="text-[28px] font-black text-[#c0001a]" style={{ fontFamily: "'Arial Black', sans-serif" }}>{num}</div>
