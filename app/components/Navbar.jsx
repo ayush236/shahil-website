@@ -39,7 +39,7 @@ const Navbar = () => {
             <div className='flex items-center justify-between py-4 px-20'>
                 <Link
                     href="/"
-                    className='hover:scale-105 transition-transform text-[32px]'
+                    className='hover:scale-105 transition-transform'
                 >
                     <Image src="/images/logo.jpeg"
                         alt="Logo"
