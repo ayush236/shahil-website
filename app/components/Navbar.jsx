@@ -32,8 +32,8 @@ const Navbar = () => {
 
     return (
         <header className='fixed top-0 left-0 w-full z-50 backdrop-blur-[10px]'
-            style={{backgroundColor : "rgba(10,10,10,0.95)",
-                borderBottom: "2px solid #c0001a"
+            style={{backgroundColor : "white",
+                borderBottom: "3px solid #c0001a"
             }}
         >
             <div className='flex items-center justify-between py-4 px-20'>
@@ -77,9 +77,9 @@ const Navbar = () => {
                                 <li key={item.id}>
                                     <Link
                                         href={item.path}
-                                        className='uppercase relative group transition-colors duration-200 font-bold'
+                                        className='uppercase text-black relative group transition-colors duration-200 font-bold'
                                         onMouseEnter={e => (e.currentTarget.style.color = "#c0001a")}
-                                        onMouseLeave={e => (e.currentTarget.style.color = "#ccc")}
+                                        onMouseLeave={e => (e.currentTarget.style.color = "#000")}
                                     >
                                         {item.label}
                                     </Link>

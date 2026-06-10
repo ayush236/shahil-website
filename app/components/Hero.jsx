@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <section className='min-h-screen relative flex items-center pt-50 overflow-hidden' 
+    <section className='min-h-screen relative flex items-center pt-20 overflow-hidden' 
         style={{
             background: "linear-gradient(135deg, #0a0a0a 0%, #1a0005 50%, #0a0a0a 100%)",
         }}>
@@ -24,9 +24,17 @@ const Hero = () => {
                 ⚙ Trusted Since 2008
                 </div>
                 <h1 className="text-[clamp(42px,8vw,90px)] font-black leading-[0.95] mb-6 tracking-[-2px]" style={{ fontFamily: "'Arial Black', sans-serif" }}>
-                <span className="text-white">YOUR RIDE</span><br />
-                <span className="text-[#c0001a]">DESERVES</span><br />
-                <span className="text-white">THE BEST</span>
+                <span className="text-white">
+                    FLAT TYRE?
+                </span><br />
+                <span 
+                    style={{color: "#c0001a"}}
+                >
+                    FIXED.
+                </span><br />
+                <span className="text-white">
+                    RIDE OUT.
+                </span>
                 </h1>
                 <p className="text-lg text-[#aaa] leading-relaxed mb-10 max-w-[500px] font-normal" style={{ fontFamily: "Arial, sans-serif" }}>
                 Expert tyre fitting, puncture repairs, and full bicycle servicing. Walk in, ride out — same day service guaranteed.
