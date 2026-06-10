@@ -2,26 +2,50 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { Menu, X } from "lucide-react"
+import Image from 'next/image'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     const navItems = [
-        { id: 1, path: "/", label: "Home" },
-        { id: 2, path: "/about", label: "About" },
-        { id: 3, path: "/work", label: "Work" },
-        { id: 4, path: "/services", label: "Services" },
-        { id: 5, path: "/contact", label: "Contact" },
+        { 
+            id: 1,
+            path: "/services",
+            label: "Services" 
+        },
+        { 
+            id: 2,
+            path: "/about",
+            label: "About" 
+        },
+        { 
+            id: 3,
+            path: "/gallery",
+            label: "Gallery" 
+        },
+        { 
+            id: 4,
+            path: "/contact",
+            label: "Contact" 
+        },
     ]
 
     return (
-        <header className='fixed top-0 left-0 w-full z-50'>
+        <header className='fixed top-0 left-0 w-full z-50'
+            style={{backgroundColor : "rgba(10,10,10,0.95)",
+                borderBottom: "2px solid #c0001a"
+            }}
+        >
             <div className='flex items-center justify-between py-4 px-10'>
                 <Link
                     href="/"
                     className='hover:scale-105 transition-transform text-[32px]'
                 >
-                    Sahid Tyres
+                    <Image src="/images/logo.jpeg"
+                        alt="Logo"
+                        width={100}
+                        height={10}
+                    />
                 </Link>
 
                 <nav className='lg:hidden'>
@@ -55,7 +79,6 @@ const Navbar = () => {
                                     className='uppercase relative group transition'
                                 >
                                     {item.label}
-                                    <span className='absolute -bottom-1 left-0 w-0 h-[1.5px] bg-white group-hover:w-full transition-all duration-300 ease-out' />
                                 </Link>
                             </li>
                         ))}
