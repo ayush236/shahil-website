@@ -1,7 +1,8 @@
 "use client"
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { Menu, X } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
+
 import Image from 'next/image'
 
 const Navbar = () => {
@@ -86,15 +87,16 @@ const Navbar = () => {
                                 </li>
                             ))
                         }
-                        <button className='uppercase relative group transition-colors font-bold cursor-pointer py-2 px-6 rounded-sm duration-200'
+                        <button className='uppercase relative group transition-colors font-bold cursor-pointer py-2 px-6 rounded-sm duration-200 flex items-center gap-2'
                             style={{
                                 backgroundColor: "#c0001a",
                                 
                             }}  
+                            onClick={() => window.open("https://wa.me/9761560190", "_blank")}
                             onMouseEnter={e => (e.currentTarget.style.background = "#e8001f")}
                             onMouseLeave={e => (e.currentTarget.style.background = "#c0001a")}
                         >
-                            Book Now
+                            Call us <Phone size={20}/>
                         </button>
                     </ul>
                 </nav>
