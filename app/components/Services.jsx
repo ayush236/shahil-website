@@ -1,54 +1,102 @@
+"use client"
+import Image from 'next/image'
 import React from 'react'
 
 const Services = () => {
-  return (
-    <section id="services" style={{ padding: "100px 24px", background: "#0d0d0d" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <div style={{ color: "#c0001a", fontSize: 12, fontWeight: 900, letterSpacing: "3px", textTransform: "uppercase", marginBottom: 12 }}>WHAT WE DO</div>
-            <h2 style={{ fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 900, color: "white", fontFamily: "'Arial Black', sans-serif", letterSpacing: "-1px" }}>
-              Our <span style={{ color: "#c0001a" }}>Services</span>
-            </h2>
-          </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
-            {[
-              { icon: "🛞", title: "Tyre Fitting", desc: "All sizes, all brands. Car, motorbike, bicycle. We stock premium and budget options to suit every need.", price: "From NPR 500" },
-              { icon: "🔧", title: "Puncture Repair", desc: "Fast puncture diagnosis and patching. Most jobs done in under 30 minutes while you wait.", price: "From NPR 150" },
-              { icon: "⚖️", title: "Wheel Balancing", desc: "Precision balancing for a smooth, vibration-free ride. Extends tyre life and improves fuel efficiency.", price: "From NPR 300" },
-              { icon: "🚲", title: "Bike Full Service", desc: "Brake adjustment, gear tuning, chain lubrication, bearing check — complete bicycle overhaul.", price: "From NPR 800" },
-              { icon: "🛑", title: "Brake Overhaul", desc: "Brake pad replacement, cable tensioning, disc and drum inspection for safe stopping every time.", price: "From NPR 400" },
-              { icon: "🔩", title: "Parts & Materials", desc: "Inner tubes, brake cables, chains, bearings, patches, valves — all stocked in-shop for immediate fitting.", price: "Varies" },
-            ].map((service) => (
-              <div key={service.title}
-                style={{
-                  background: "#161616", border: "1px solid #2a2a2a", borderRadius: 8, padding: 32,
-                  transition: "all 0.3s", cursor: "default",
-                }}
-                onMouseEnter={e => {
-                  const el = e.currentTarget;
-                  el.style.borderColor = "#c0001a";
-                  el.style.background = "#1a0004";
-                  el.style.transform = "translateY(-4px)";
-                  el.style.boxShadow = "0 12px 40px rgba(192,0,26,0.2)";
-                }}
-                onMouseLeave={e => {
-                  const el = e.currentTarget;
-                  el.style.borderColor = "#2a2a2a";
-                  el.style.background = "#161616";
-                  el.style.transform = "translateY(0)";
-                  el.style.boxShadow = "none";
-                }}
-              >
-                <div style={{ fontSize: 40, marginBottom: 16 }}>{service.icon}</div>
-                <h3 style={{ color: "white", fontSize: 20, fontWeight: 900, marginBottom: 10, fontFamily: "'Arial Black', sans-serif" }}>{service.title}</h3>
-                <p style={{ color: "#888", fontSize: 14, lineHeight: 1.6, marginBottom: 20, fontFamily: "Arial, sans-serif" }}>{service.desc}</p>
-                <div style={{ color: "#c0001a", fontSize: 14, fontWeight: 900, letterSpacing: "1px" }}>{service.price}</div>
-              </div>
-            ))}
-          </div>
+  const services = [
+  {
+    tag: "Car · Bike",
+    title: "Engine Diagnostics",
+    desc: "We inspect the engine for power loss causes. Proper diagnosis prevents breakdowns.",
+    image: "/images/engine diagonis.png",
+  },
+  {
+    tag: "Car · Bike",
+    title: "Brake Repair",
+    desc: "If brakes feel weak or noisy, we'll check and replace parts to restore power.",
+    image: "/images/brake repair.png",
+  },
+  {
+    tag: "Maintenance",
+    title: "Oil & Filter Change",
+    desc: "New oil and filters significantly reduce wear. We replace the oil and check for leaks.",
+    image: "/images/oil.png",
+  },
+  {
+    tag: "Car · Bike",
+    title: "Wheel Balancing",
+    desc: "Unbalanced wheels cause vibration and uneven tyre wear. We balance all four wheels.",
+    image: "/images/oil.png",
+  },
+]
+  return (
+    <section className="py-16 px-20"
+      style={{
+        background: "#0d0d0d" 
+      }}
+    >
+      <div className='mt-20 text-center mb-30'>
+        <div className='uppercase mb-12' 
+          style={{ 
+            color: "#c0001a", 
+            fontSize: 12, 
+            fontWeight: 900, 
+            letterSpacing: "3px"
+          }}>
+          WHAT WE DO
         </div>
-      </section>
+        <h2 className='text-white' 
+          style={{ 
+            fontSize: "clamp(32px, 5vw, 56px)", fontWeight: 900, letterSpacing: "-1px" 
+          }}>
+          Our <span style={{ color: "#c0001a" }}>Services</span>
+        </h2>
+      </div>
+
+      <div className="items-center flex flex-col p-2 gap-8">
+      {
+        services.map((service, i) => (
+          <div
+            key={i}
+            className="w-[67%] flex items-start justify-between py-12 px-5 gap-10 rounded-2xl transition-all duration-500 cursor-pointer"
+            style={{ 
+              background: "#111111",
+            }}
+            onMouseEnter={e => {
+              const el = e.currentTarget;
+              el.style.transform = "translateY(-5px)";
+              el.style.boxShadow = "0 0 25px rgba(255,255,255,0.08), 1px 0 1px rgba(0,0,0,0.6)";
+            }}
+            onMouseLeave={e => {
+              const el = e.currentTarget;
+              el.style.transform = "translateY(0)";
+              el.style.boxShadow = "none";
+            }}
+          >
+            <div className="flex-1 p-2">
+              <p
+                className="text-sm font-bold uppercase tracking-widest mb-3"
+                style={{ color: "#c0001a" }}
+              >
+                {service.tag}
+              </p>
+              <h3 className="text-2xl font-bold text-white mb-5">{service.title}</h3>
+              <p className="text-sm text-gray-200 leading-relaxed max-w-sm">{service.desc}</p>
+            </div>
+
+            <Image
+              src={service.image}
+              alt={service.title}
+              width={380}
+              height={300}
+              className="h-62.5 rounded-xl object-cover shrink-0 transition-all duration-300 group-hover:brightness-110"
+            />
+          </div>
+        ))
+      }
+      </div>
+    </section>
   )
 }
 
