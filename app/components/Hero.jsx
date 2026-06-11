@@ -42,14 +42,14 @@ const Hero = () => {
 
                 <div className="flex gap-4 flex-wrap">
                     <a
-                        href="#contact"
-                        className="bg-[#c0001a] text-white px-9 py-4 no-underline text-[15px] font-black tracking-[1px] uppercase rounded transition-all duration-200 shadow-[0_0_30px_rgba(192,0,26,0.3)] hover:bg-[#e8001f] hover:shadow-[0_0_40px_rgba(232,0,31,0.5)]"
+                        href="https://wa.me/9761560190" target='_blank'
+                        className="bg-[#c0001a] text-white px-6 py-4 no-underline text-[15px] font-black tracking-[1px] uppercase rounded transition-all duration-200 shadow-[0_0_30px_rgba(192,0,26,0.3)] hover:bg-[#e8001f] hover:shadow-[0_0_40px_rgba(232,0,31,0.5)]"
                     >
-                        Book a Repair
+                        Call us: +977 9761561090
                     </a>
                     <a
-                        href="#services"
-                        className="border-2 border-[#444] text-white px-9 py-4 no-underline text-[15px] font-black tracking-[1px] uppercase rounded transition-all duration-200 hover:border-[#c0001a] hover:text-[#c0001a]"
+                        href="/services"
+                        className="border-2 border-[#444] text-white px-6 py-4 no-underline text-[15px] font-black tracking-[1px] uppercase rounded transition-all duration-200 hover:border-[#c0001a] hover:text-[#c0001a]"
                     >
                         Our Services
                     </a>
@@ -59,7 +59,7 @@ const Hero = () => {
                     {[["5000+", "Happy Customers"], ["15+", "Years Experience"], ["Same Day", "Turnaround"]].map(([num, label]) => (
                         <div key={label}>
                             <div className="text-[28px] font-black text-[#c0001a]" style={{ fontFamily: "'Arial Black', sans-serif" }}>{num}</div>
-                            <div className="text-xs text-[#666] tracking-[1px] uppercase" style={{ fontFamily: "Arial, sans-serif" }}>{label}</div>
+                            <div className="text-xs text-[#aaa] tracking-[1px] uppercase" style={{ fontFamily: "Arial, sans-serif" }}>{label}</div>
                         </div>
                     ))}
                 </div>

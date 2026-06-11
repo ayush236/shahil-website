@@ -37,7 +37,7 @@ const Navbar = () => {
                 borderBottom: "3px solid #c0001a"
             }}
         >
-            <div className='flex items-center justify-between py-4 px-20'>
+            <div className='flex items-center justify-between py-3 px-20'>
                 <Link
                     href="/"
                     className='hover:scale-105 transition-transform'
