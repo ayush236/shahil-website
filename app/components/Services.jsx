@@ -36,11 +36,11 @@ const Services = () => {
         background: "#0d0d0d" 
       }}
     >
-      <div className='mt-20 text-center mb-30'>
-        <div className='uppercase mb-12' 
+      <div className='mt-20 text-center mb-25'>
+        <div className='uppercase mb-7' 
           style={{ 
             color: "#c0001a", 
-            fontSize: 12, 
+            fontSize: 15, 
             fontWeight: 900, 
             letterSpacing: "3px"
           }}>
