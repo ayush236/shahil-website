@@ -20,14 +20,14 @@ const Testimonials = () => {
                     { name: "Bikash Yadav", role: "Daily Commuter", text: "Brought in two worn tyres and they had them swapped and balanced in under an hour. Great service, honest price.", stars: 5 },
                 ].map((t) => (
                     <div key={t.name} className="bg-[#161616] border border-[#2a2a2a] rounded-lg p-7">
-                    <div className="text-[#c0001a] text-lg mb-3">{"★".repeat(t.stars)}</div>
-                    <p className="text-[#ccc] text-sm leading-[1.7] mb-5 italic font-sans">
-                        &quot;{t.text}&quot;
-                    </p>
-                    <div className="border-t border-[#2a2a2a] pt-4">
-                        <div className="text-white font-black text-sm">{t.name}</div>
-                        <div className="text-[#666] text-xs uppercase tracking-[1px]">{t.role}</div>
-                    </div>
+                        <div className="text-[#c0001a] text-lg mb-3">{"★".repeat(t.stars)}</div>
+                        <p className="text-[#ccc] text-sm leading-[1.7] mb-5 italic font-sans">
+                            &quot;{t.text}&quot;
+                        </p>
+                        <div className="border-t border-[#2a2a2a] pt-4">
+                            <div className="text-white font-black text-sm">{t.name}</div>
+                            <div className="text-[#666] text-xs uppercase tracking-[1px]">{t.role}</div>
+                        </div>
                     </div>
                 ))}
             </div>
