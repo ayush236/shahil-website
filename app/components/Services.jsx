@@ -59,19 +59,21 @@ const Services = () => {
         services.map((service, i) => (
           <div
             key={i}
-            className="w-full md:w-[67%] flex flex-col md:flex-row items-start justify-between py-12 px-5 gap-10 rounded-2xl transition-all duration-500 cursor-pointer"
+            className="w-full md:w-[67%] flex flex-col md:flex-row items-start justify-between py-12 px-5 gap-10 rounded-2xl transition-all duration-500 cursor-pointer border border-white/10"
             style={{ 
               background: "#111111",
             }}
             onMouseEnter={e => {
               const el = e.currentTarget;
               el.style.transform = "translateY(-5px)";
-              el.style.boxShadow = "0 0 25px rgba(255,255,255,0.08), 1px 0 1px rgba(0,0,0,0.6)";
+              el.style.boxShadow = "0 0 40px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.6)";
+              el.style.borderColor = "rgba(255,255,255,0.25)";
             }}
             onMouseLeave={e => {
               const el = e.currentTarget;
               el.style.transform = "translateY(0)";
               el.style.boxShadow = "none";
+              el.style.borderColor = "rgba(255,255,255,0.1)";
             }}
           >
             <div className="flex-1 p-2">
