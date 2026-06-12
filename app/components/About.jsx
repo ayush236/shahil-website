@@ -2,9 +2,9 @@ import React from 'react'
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6 bg-linear-to-b from-[#0d0d0d] via-[#12000a] to-[#0d0d0d]">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-        <div className="relative">
+    <section id="about" className="py-20 px-6 bg-linear-to-b from-[#0d0d0d] via-[#12000a] to-[#0d0d0d]">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-30 items-center">
+        <div className="relative w-80 md:w-full mx-auto">
           <div className="w-full pb-[100%] rounded-full relative border-[3px] border-[#c0001a]"
             style={{
               background: "radial-gradient(circle, #1a0008 0%, #0a0a0a 70%)",

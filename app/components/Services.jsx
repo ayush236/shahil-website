@@ -59,7 +59,7 @@ const Services = () => {
         services.map((service, i) => (
           <div
             key={i}
-            className="w-[67%] flex items-start justify-between py-12 px-5 gap-10 rounded-2xl transition-all duration-500 cursor-pointer"
+            className="w-full md:w-[67%] flex flex-col md:flex-row items-start justify-between py-12 px-5 gap-10 rounded-2xl transition-all duration-500 cursor-pointer"
             style={{ 
               background: "#111111",
             }}
@@ -90,7 +90,7 @@ const Services = () => {
               alt={service.title}
               width={380}
               height={300}
-              className="h-62.5 rounded-xl object-cover shrink-0 transition-all duration-300 group-hover:brightness-110"
+              className="w-full md:w-auto h-62.5 rounded-xl object-cover shrink-0 transition-all duration-300 group-hover:brightness-110"
             />
           </div>
         ))
