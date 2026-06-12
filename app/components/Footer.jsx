@@ -1,6 +1,25 @@
 import React from 'react'
 
 const Footer = () => {
+
+    const footerItems = [
+        { 
+            id: 1,
+            path: "https://www.facebook.com/",
+            label: "Facebook" 
+        },
+        { 
+            id: 2,
+            path: "https://www.instagram.com/",
+            label: "Instagram" 
+        },
+        { 
+            id: 3,
+            path: "https://wa.me/9761560190",
+            label: "Whatsapp" 
+        }
+    ]
+
   return (
     <footer className="bg-[#050505] border-t-2 border-[#c0001a] px-6 py-10">
         <div className="max-w-350 mx-auto flex justify-between items-center flex-wrap gap-6">
@@ -18,13 +37,14 @@ const Footer = () => {
             </div>
 
             <div className="flex gap-4">
-                {["Facebook", "Instagram", "WhatsApp"].map(s => (
+                {footerItems.map(item => (
                     <a
-                    key={s}
-                    href="#"
+                    key={item.id}
+                    href={item.path}
+                    target='_blank'
                     className="text-[#555] text-m font-sans transition-colors duration-200 hover:text-[#c0001a]"
                     >
-                    {s}
+                    {item.label}
                     </a>
                 ))}
             </div>
